@@ -1,0 +1,15 @@
+{
+    "name": "lifespikes/menu",
+    "autoload": {
+        "psr-4": {
+            "Lifespikes\\Menu\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lifespikes\\Menu\\MenuServiceProvider"
+            ]
+        }
+    }
+}
