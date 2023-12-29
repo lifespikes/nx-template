@@ -24,7 +24,7 @@
         "psr-4": {
             "App\\": "apps/api/app/",
             "Database\\Factories\\": "apps/api/database/factories/",
-            "Database\\Seeders\\": "apps/api/database/seeders/",
+            "Database\\Seeders\\": "apps/api/database/seeders/"
         }
     },
     "autoload-dev": {
@@ -48,10 +48,6 @@
         "monorepo-cli": {
             "ignorePackages": [
                 "monorepo-cli"
-            ],
-            "packageDir": [
-                "apps/api",
-                "packages"
             ]
         }
     },
