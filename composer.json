@@ -25,7 +25,6 @@
             "App\\": "apps/api/app/",
             "Database\\Factories\\": "apps/api/database/factories/",
             "Database\\Seeders\\": "apps/api/database/seeders/",
-            "Lifespikes\\Menu\\": "packages/menu/src"
         }
     },
     "autoload-dev": {
@@ -44,7 +43,6 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lifespikes\\Menu\\MenuServiceProvider"
             ]
         },
         "monorepo-cli": {
