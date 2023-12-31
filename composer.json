@@ -52,7 +52,7 @@
         }
     },
     "replace": {
-        "lifespikes/api": "self.version",
+        "lifespikes/api": "self.version"
     },
     "version": "v0.0.1",
     "minimum-stability": "dev",
