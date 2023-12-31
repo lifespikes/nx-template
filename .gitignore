@@ -4,3 +4,7 @@
 .env
 .env.backup
 .env.production
+
+.nx/installation
+.nx/cache
+.DS_Store
