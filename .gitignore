@@ -8,3 +8,7 @@
 .nx/installation
 .nx/cache
 .DS_Store
+.yarn/unplugged
+
+# Next.js
+.next
