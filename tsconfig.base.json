@@ -1,13 +1,22 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
     "paths": {
-      "ui": ["packages/ui/src/index.ts"],
-      "ui/server": ["packages/ui/src/server.ts"]
+      "@unnamed-restaurant/ui": ["packages/ui/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp"]
 }
