@@ -21,12 +21,7 @@
       "@unnamed-restaurant/ui": [
         "packages/ui/src/index.ts"
       ]
-    },
-    "types": [
-      "@adonisjs/core",
-      "@adonisjs/repl",
-      "@japa/preset-adonis/build/adonis-typings"
-    ]
+    }
   },
   "exclude": [
     "node_modules",
