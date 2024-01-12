@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import registerConfig from '@app/config';
 import { CommandModule } from 'nestjs-command';
 import { OpenApiCommand } from '@app/app/commands/open-api.command';
+import { RouteListCommand } from '@app/app/commands/route-list.command';
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { OpenApiCommand } from '@app/app/commands/open-api.command';
     CommandModule,
   ],
   controllers: [AppController],
-  providers: [AppService, OpenApiCommand],
+  providers: [AppService, OpenApiCommand, RouteListCommand],
 })
 export class AppModule {}
