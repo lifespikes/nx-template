@@ -1,7 +1,5 @@
 import { Logger } from '@nestjs/common';
 import { SwaggerModule } from '@nestjs/swagger';
-
-import expressListRoutes from 'express-list-routes';
 import { createSwaggerDocument, getApp, globalPrefix } from '@app/bootstrap';
 
 async function bootstrap() {
@@ -16,11 +14,6 @@ async function bootstrap() {
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`,
   );
-
-  const server = app.getHttpServer();
-  const router = server._events.request._router;
-
-  expressListRoutes(router);
 }
 
 bootstrap();
