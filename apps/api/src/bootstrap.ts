@@ -7,10 +7,10 @@ export const globalPrefix = 'api';
 
 export const createSwaggerDocument = (app: INestApplication<any>) => {
   const config = new DocumentBuilder()
-    .setTitle('Educal')
+    .setTitle('Unnamed Restaurant')
     .setDescription('API description')
     .setVersion('1.0')
-    .addTag('educal')
+    .addTag('unnamed-restaurant')
     .addBearerAuth()
     .build();
 
