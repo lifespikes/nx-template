@@ -14,8 +14,12 @@ model User {
   id         Int     @id @default(autoincrement())
   email      String  @unique
   name       String?
-  phone      String
-  isVerified Boolean @map("is_verified")
+  phone      String?
+  password   String
+  isVerified Boolean @default(false) @map("is_verified")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("users")
 }
