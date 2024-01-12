@@ -43,20 +43,12 @@ To control where the tabs should be rendered within a page, a component can be p
 ```tsx
 // company/(details)/layout.tsx
 import WithTabs from '@/modules/global/layout/with-tabs';
-import { getUser } from "@/hooks/getUser";
+import { getUser } from '@/hooks/getUser';
 
 const CompanyDetailsPage = ({ children }) => {
-    const isUserLogged = !!getUser();
-    return (
-        <>
-            {isUserLogged ? (
-                <div>{children}</div>
-            ) : (
-                <p>Forbidden</p>
-            )}
-        </>
-    );
-}
+  const isUserLogged = !!getUser();
+  return <>{isUserLogged ? <div>{children}</div> : <p>Forbidden</p>}</>;
+};
 
 export default WithTabs(CompanyDetailsPage);
 ```
@@ -92,7 +84,7 @@ Using the `withTabs` function in both layouts would cause a conflict. To resolve
 ```plaintext
 companies/
 └── (details)/                      -> Route group.
-    ├── [id]/ 
+    ├── [id]/
     │   ├── billing_2/
     │   ├── @company_details_1/
     │   ├── payrolls_4/

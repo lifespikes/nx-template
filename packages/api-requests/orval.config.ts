@@ -22,7 +22,7 @@ export default defineConfig({
     },
     input: {
       target: `${apiBase}/open-api.json`,
-   /*   override: {
+      /*   override: {
         transformer: `${base}/transformers/scramble-transformer.cjs`,
       },*/
     },

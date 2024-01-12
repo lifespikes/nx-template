@@ -2,22 +2,21 @@ import colors from 'tailwindcss/colors';
 
 import defaultTheme from 'tailwindcss/defaultTheme';
 
-
 // Suppress Tailwind warnings
 // @ts-ignore
-delete colors.coolGray
+delete colors.coolGray;
 
 // @ts-ignore
-delete colors.blueGray
+delete colors.blueGray;
 
 // @ts-ignore
-delete colors.warmGray
+delete colors.warmGray;
 
 // @ts-ignore
-delete colors.lightBlue
+delete colors.lightBlue;
 
 // @ts-ignore
-delete colors.trueGray
+delete colors.trueGray;
 
 const config = {
   content: [
@@ -334,6 +333,6 @@ const config = {
     },
   },
   plugins: [require('tailwindcss-animate')],
-}
+};
 
-export default config
+export default config;

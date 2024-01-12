@@ -1,4 +1,7 @@
-import { Sidebar, SidebarItem } from '@unnamedrestaurant/ui/components/composites';
+import {
+  Sidebar,
+  SidebarItem,
+} from '@unnamedrestaurant/ui/components/composites';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
 import {

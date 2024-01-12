@@ -19,7 +19,7 @@ export const useSidebarItems = () => {
     }
 
     // @ts-ignore
-    return { ...item,  current: isCurrent, as: item.as ?? Link, }
+    return { ...item, current: isCurrent, as: item.as ?? Link }
   }
 
   const items: SidebarItem[] = (

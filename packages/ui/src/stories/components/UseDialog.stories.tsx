@@ -1,4 +1,8 @@
-import { Button, DialogProvider, useDialog } from '@unnamedrestaurant/ui/components/ui';
+import {
+  Button,
+  DialogProvider,
+  useDialog,
+} from '@unnamedrestaurant/ui/components/ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { FC, PropsWithChildren } from 'react';
 

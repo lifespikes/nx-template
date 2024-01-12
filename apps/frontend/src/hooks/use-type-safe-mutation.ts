@@ -56,7 +56,11 @@ export const useTypeSafeMutation = <
   ): Promise<TData> => {
     const fn = api[mutationKey[0] as keyof typeof api]
     if (typeof fn !== 'function') {
-      throw new Error(`${mutationKey[0] as unknown as string} is not a valid key for make a query`)
+      throw new Error(
+        `${
+          mutationKey[0] as unknown as string
+        } is not a valid key for make a query`,
+      )
     }
 
     // @ts-ignore

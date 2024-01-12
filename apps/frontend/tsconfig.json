@@ -17,23 +17,12 @@
         "name": "next"
       }
     ],
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "auth": [
-        "./auth"
-      ],
-      "@/root/*": [
-        "./*"
-      ],
-      "@unnamedrestaurant/ui/*": [
-        "../../packages/ui/src/*"
-      ]
+      "@/*": ["./src/*"],
+      "auth": ["./auth"],
+      "@/root/*": ["./*"],
+      "@unnamedrestaurant/ui/*": ["../../packages/ui/src/*"]
     }
   },
   "ts-node": {

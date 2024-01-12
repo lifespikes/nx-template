@@ -1,5 +1,8 @@
 import { ColumnDef } from '@tanstack/react-table'
-import { CheckboxPrimitive, SimpleAvatar } from '@unnamedrestaurant/ui/components'
+import {
+  CheckboxPrimitive,
+  SimpleAvatar,
+} from '@unnamedrestaurant/ui/components'
 import * as React from 'react'
 import { WithProfileType } from '@/types/models'
 

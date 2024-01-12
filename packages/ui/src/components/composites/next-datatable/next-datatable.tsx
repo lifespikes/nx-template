@@ -1,8 +1,11 @@
-import { DataTable, DataTableProps } from '@unnamedrestaurant/ui/components/composites';
+import {
+  DataTable,
+  DataTableProps,
+} from '@unnamedrestaurant/ui/components/composites';
 import { useNextTableStateInternal } from '@unnamedrestaurant/ui/components/composites';
 
 export const NextDataTable = <D extends Record<any, any>>(
-  props: DataTableProps<D>
+  props: DataTableProps<D>,
 ) => {
   const {
     pagination,
@@ -13,7 +16,7 @@ export const NextDataTable = <D extends Record<any, any>>(
     setColumnVisibility,
     setSorting,
     setColumnFilters,
-    isLoading
+    isLoading,
   } = useNextTableStateInternal();
 
   const _loading = props.isLoading || isLoading;
@@ -29,12 +32,12 @@ export const NextDataTable = <D extends Record<any, any>>(
           pagination,
           sorting,
           columnVisibility,
-          columnFilters
+          columnFilters,
         },
         onSortingChange: setSorting,
         onPaginationChange: setPagination,
         onColumnVisibilityChange: setColumnVisibility,
-        onColumnFiltersChange: setColumnFilters
+        onColumnFiltersChange: setColumnFilters,
       }}
       isLoading={_loading}
     />

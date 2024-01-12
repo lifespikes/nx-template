@@ -6,23 +6,23 @@ import {
   CardHeader,
   CardTitle,
   Separator,
-} from '@unnamedrestaurant/ui/components/ui'
-import * as React from 'react'
-import { FC, PropsWithChildren, ReactNode } from 'react'
-import { cn } from '@unnamedrestaurant/ui/lib/utils'
+} from '@unnamedrestaurant/ui/components/ui';
+import * as React from 'react';
+import { FC, PropsWithChildren, ReactNode } from 'react';
+import { cn } from '@unnamedrestaurant/ui/lib/utils';
 
 export interface CardBadgeProps
   extends PropsWithChildren,
     React.HTMLAttributes<HTMLDivElement> {
-  footer?: ReactNode
-  title: string
-  description?: string
-  badgeTxt?: string
-  buttons?: ReactNode
-  className?: string
-  header?: ReactNode
-  hasSeparator?: boolean
-  asChild?: boolean
+  footer?: ReactNode;
+  title: string;
+  description?: string;
+  badgeTxt?: string;
+  buttons?: ReactNode;
+  className?: string;
+  header?: ReactNode;
+  hasSeparator?: boolean;
+  asChild?: boolean;
 }
 
 export const CardBadge: FC<CardBadgeProps> = ({
@@ -37,7 +37,7 @@ export const CardBadge: FC<CardBadgeProps> = ({
   asChild = false,
   ...props
 }) => {
-  const CardComponent = asChild ? 'div' : Card
+  const CardComponent = asChild ? 'div' : Card;
 
   return (
     <CardComponent {...props}>
@@ -74,5 +74,5 @@ export const CardBadge: FC<CardBadgeProps> = ({
       </CardContent>
       {footer ? <CardFooter>{footer}</CardFooter> : null}
     </CardComponent>
-  )
-}
+  );
+};

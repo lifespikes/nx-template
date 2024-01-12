@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { FC, Fragment, ReactNode } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs';
-import { ScrollArea, ScrollBar, Skeleton } from '@unnamedrestaurant/ui/components/ui';
+import {
+  ScrollArea,
+  ScrollBar,
+  Skeleton,
+} from '@unnamedrestaurant/ui/components/ui';
 import { cn } from '@unnamedrestaurant/ui/lib/utils';
 
 export type DynamicTab = {

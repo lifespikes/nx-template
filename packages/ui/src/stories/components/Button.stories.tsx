@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, TooltipButton } from '@unnamedrestaurant/ui/components/ui/button';
+import {
+  Button,
+  TooltipButton,
+} from '@unnamedrestaurant/ui/components/ui/button';
 import { ucfirst } from '@unnamedrestaurant/ui/lib/utils';
 import { DownloadCloud, Search } from 'lucide-react';
 import * as React from 'react';

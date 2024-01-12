@@ -2,7 +2,11 @@ import { Sidebar } from '@unnamedrestaurant/ui/components/composites';
 
 import { sidebarItems } from '../composites/Sidebar.stories';
 import { PageHeader } from '@unnamedrestaurant/ui/components/composites/page-header';
-import { Tabs, TabsList, TabsTrigger } from '@unnamedrestaurant/ui/components/ui';
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+} from '@unnamedrestaurant/ui/components/ui';
 
 const meta = {
   title: 'Pages/SetupAccount',

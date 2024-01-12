@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@unnamedrestaurant/ui/*": ["./src/*"]
-    },
+    }
   },
   "files": [],
   "include": [],

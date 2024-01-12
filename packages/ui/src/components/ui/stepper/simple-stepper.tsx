@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { Step, StepProps, Steps, StepsProps } from '@unnamedrestaurant/ui/components/ui';
+import {
+  Step,
+  StepProps,
+  Steps,
+  StepsProps,
+} from '@unnamedrestaurant/ui/components/ui';
 
 export const SimpleStepper: FC<StepsProps & { steps: StepProps[] }> = (
   props,
