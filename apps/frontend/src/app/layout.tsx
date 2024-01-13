@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+//import '@lifespikes/ui/style.css'
 import { cn } from '@/lib/utils'
 import { auth } from 'auth'
 import AppProvider from '@/components/global/app-provider'

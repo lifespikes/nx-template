@@ -2,7 +2,7 @@
 
 import { SessionProvider } from 'next-auth/react'
 import { FC, PropsWithChildren, useState } from 'react'
-import { DialogProvider, Toaster } from '@unnamedrestaurant/ui/components'
+import { DialogProvider, Toaster } from '@lifespikes/ui'
 import AuthGuard from '@/components/global/auth-guard'
 import { ThemeProvider } from '@/components/global/theme-provider'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'

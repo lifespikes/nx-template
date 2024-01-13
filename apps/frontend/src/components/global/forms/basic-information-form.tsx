@@ -4,7 +4,7 @@ import {
   InputField,
   InputGroup,
   SimpleAvatar,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import React, { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
 

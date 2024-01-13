@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table'
 import { profileColumns } from '@/components/global/tables/profile/columns'
-import { Button, ButtonGroup } from '@unnamedrestaurant/ui/components'
+import { Button, ButtonGroup } from '@lifespikes/ui'
 import { Edit } from 'lucide-react'
 import * as React from 'react'
 import Link from 'next/link'

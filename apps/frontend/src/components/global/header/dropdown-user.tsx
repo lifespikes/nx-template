@@ -6,7 +6,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   SimpleAvatar,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import { useAuth } from '@/hooks/use-auth'
 import { signOut } from 'next-auth/react'
 

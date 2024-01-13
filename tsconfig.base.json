@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@unnamedrestaurant/api-requests": ["packages/api-requests/src/index.ts"],
-      "@unnamedrestaurant/ui": ["packages/ui/src/index.ts"]
+      "@unnamedrestaurant/api-requests": ["packages/api-requests/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
