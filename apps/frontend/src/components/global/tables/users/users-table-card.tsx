@@ -4,7 +4,7 @@ import {
   ButtonGroup,
   CardBadge,
   CardBadgeProps,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 
 import { FC } from 'react'
 import { Send } from 'lucide-react'

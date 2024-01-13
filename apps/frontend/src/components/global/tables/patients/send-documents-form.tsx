@@ -3,7 +3,7 @@ import {
   ButtonGroup,
   Form,
   useDialog,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import { useForm } from 'react-hook-form'
 
 import { Send } from 'lucide-react'

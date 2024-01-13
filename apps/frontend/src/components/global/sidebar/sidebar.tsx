@@ -1,5 +1,5 @@
 import React, { FC, useRef } from 'react'
-import { Sidebar, SidebarRefType } from '@unnamedrestaurant/ui/components'
+import { Sidebar, SidebarRefType } from '@lifespikes/ui'
 import { useSidebarItems } from './use-sidebar-items'
 import { Logo } from '@/components/global/logo'
 import { useUrlChange } from '@/hooks/use-url-change'

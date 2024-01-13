@@ -9,7 +9,7 @@ import {
 } from 'react-hook-form'
 
 import * as Yup from 'yup'
-import { useToast } from '@unnamedrestaurant/ui/components'
+import { useToast } from '@lifespikes/ui'
 
 /* useForm wrapper for better use of yup schemas  */
 export const useForm = <
@@ -48,10 +48,11 @@ export const useForm = <
             message: value?.message as string,
           })
         }
-        toast.destructive(
-          'Hay algunos errores en el formulario',
-          'Por favor, intenta nuevamente',
-        )
+
+        toast.destructive({
+          title: 'Hay algunos errores en el formulario',
+          description: 'Por favor, intenta nuevamente',
+        })
       }
     }
   }

@@ -1,16 +1,12 @@
 'use client'
-import {
-  Button,
-  Form,
-  InputField,
-  useToast,
-} from '@unnamedrestaurant/ui/components'
+
 import { SubmitHandler } from 'react-hook-form'
 import { CheckCredentialsSchemaType } from '@/types/schemas'
 import { useForm } from '@/hooks/use-form'
 import { checkCredentialsSchema } from '@/constants/yup-schemas/users.schema'
 import { signIn } from 'next-auth/react'
 import { ChevronRight } from 'lucide-react'
+import { Button, Form, InputField, useToast } from '@lifespikes/ui'
 
 const LoginForm = () => {
   const form = useForm<CheckCredentialsSchemaType>({
@@ -37,10 +33,10 @@ const LoginForm = () => {
     const des = (resp as any)?.description
 
     const errorFn = () => {
-      toast.destructive(
-        'No se pudo iniciar sesión',
-        'Por favor intente nuevamente',
-      )
+      toast.destructive({
+        title: 'No se pudo iniciar sesión',
+        description: 'Por favor intente nuevamente',
+      })
     }
 
     if (des) {
@@ -52,7 +48,10 @@ const LoginForm = () => {
       return errorFn()
     }
 
-    toast.success('Bienvenido!', 'Será redireccionado a la página principal')
+    toast.success({
+      title: 'Bienvenido!',
+      description: 'Será redireccionado a la página principal',
+    })
 
     setTimeout(() => {
       window.location.replace('/')

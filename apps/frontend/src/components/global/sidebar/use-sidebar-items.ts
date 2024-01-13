@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { HomeIcon, LogOut, ShieldPlusIcon, Users } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import { SidebarItem } from '@unnamedrestaurant/ui/components'
+import { SidebarItem } from '@lifespikes/ui'
 import { signOut } from 'next-auth/react'
 
 export const useSidebarItems = () => {

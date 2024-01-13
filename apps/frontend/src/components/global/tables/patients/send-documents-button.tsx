@@ -1,4 +1,4 @@
-import { Button, SimpleDialog } from '@unnamedrestaurant/ui/components'
+import { Button, SimpleDialog } from '@lifespikes/ui'
 import { Send } from 'lucide-react'
 import SendDocumentsForm from './send-documents-form'
 

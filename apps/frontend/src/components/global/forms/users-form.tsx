@@ -8,7 +8,7 @@ import {
   InputField,
   InputGroup,
   useToast,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import React, { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import BasicInformationForm from './basic-information-form'
@@ -53,16 +53,16 @@ const UsersForm: FC<UsersFormProps> = ({
 
   const { router } = useNavigation()
 
-  const { isPending, mutate, mutateAsync } = useTypeSafeMutation({
+  const { isPending, mutateAsync } = useTypeSafeMutation({
     mutationKey: [isCreateForm ? 'createUser' : 'updateUser'],
     invalidatedQueries: ['getUsers'],
     onSuccess() {
-      toast.success(
-        '¡Perfecto!',
-        isCreateForm
+      toast.success({
+        title: '¡Perfecto!',
+        description: isCreateForm
           ? 'Se ha creado el usuario'
           : 'Se ha actualizado el usuario',
-      )
+      })
 
       if (isCreateForm) {
         router.replace('/admin/users')

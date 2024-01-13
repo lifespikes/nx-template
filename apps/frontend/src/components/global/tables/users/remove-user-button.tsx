@@ -1,4 +1,4 @@
-import { Button, useDialog } from '@unnamedrestaurant/ui/components'
+import { Button, useDialog } from '@lifespikes/ui'
 import { Trash } from 'lucide-react'
 import * as React from 'react'
 import { FC } from 'react'

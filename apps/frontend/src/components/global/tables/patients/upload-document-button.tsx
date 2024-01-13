@@ -1,4 +1,4 @@
-import { Button, SimpleDialog } from '@unnamedrestaurant/ui/components/ui'
+import { Button, SimpleDialog } from '@lifespikes/ui'
 import { UploadCloud } from 'lucide-react'
 import * as React from 'react'
 import UploadDocumentForm from './upload-document-form'

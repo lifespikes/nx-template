@@ -2,7 +2,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import {
   CheckboxPrimitive,
   SimpleAvatar,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import * as React from 'react'
 import { WithProfileType } from '@/types/models'
 

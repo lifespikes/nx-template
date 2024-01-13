@@ -4,7 +4,7 @@ import {
   Form,
   InputField,
   InputGroup,
-} from '@unnamedrestaurant/ui/components'
+} from '@lifespikes/ui'
 import { useForm } from 'react-hook-form'
 
 const UploadDocumentForm = () => {
