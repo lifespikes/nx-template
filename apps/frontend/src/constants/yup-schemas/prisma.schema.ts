@@ -2,13 +2,6 @@ import yup from '@/constants/yup-schemas/yup'
 
 import { InferType } from 'yup'
 
-export const userSchema = yup.object().shape({
-  name: yup.string().nullable(),
-  email: yup.string().email().nullable(),
-  password: yup.string().nullable(),
-  profileid: yup.number().required(),
-})
-
 export const passwordSchema = yup.object().shape({
   password: yup.string(),
   confirmPassword: yup
@@ -35,44 +28,6 @@ export const profileSchema = yup.object().shape({
   //municipalityId: yup.number().nullable(),
   professionId: yup.number().nullable(),
 })
-
-export const patientSchema = yup.object().shape({
-  profileid: yup.number().required(),
-})
-
-export const medicalHistorySchema = yup.object().shape({
-  patientId: yup.number().required(),
-  numAfiliation: yup.string().nullable(),
-})
-
-export const appointmentSchema = yup.object().shape({
-  reason: yup.string().required(),
-  observations: yup.string().required(),
-  forecast: yup.string().required(),
-  others: yup.string().default(''),
-  lastDateOfVisit: yup.date().default(() => new Date()),
-  dentistId: yup.number().required(),
-  medicalHistoryId: yup.number().required(),
-})
-
-export const assessmentTestSchema = yup.object().shape({
-  name: yup.string().required(),
-  oralHygiene: yup.number().required(),
-  useOfdentalFloss: yup.number().required(),
-  useOfToothBrush: yup.number().required(),
-  useOfMouthWash: yup.number().required(),
-  appointmentId: yup.number().required(),
-})
-
-export const departmentSchema = yup.object().shape({
-  name: yup.string().required(),
-})
-
-export const professionSchema = yup.object().shape({
-  name: yup.string().required(),
-})
-
-/// forms
 
 const baseUserFormSchema = yup
   .object()

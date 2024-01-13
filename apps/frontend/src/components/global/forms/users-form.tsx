@@ -7,20 +7,16 @@ import {
   Heading,
   InputField,
   InputGroup,
-  useToast,
 } from '@lifespikes/ui'
 import React, { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import BasicInformationForm from './basic-information-form'
-
-import { useTypeSafeMutation } from '@/hooks/use-type-safe-mutation'
 import { useForm } from '@/hooks/use-form'
 import {
   userFormSchema,
   UserFormSchemaType,
   userFormsSchemaCreate,
 } from '@/constants/yup-schemas/prisma.schema'
-import { useNavigation } from '@/hooks/use-navigation'
 
 export interface UsersFormProps {
   isCreateForm?: boolean
@@ -49,34 +45,7 @@ const UsersForm: FC<UsersFormProps> = ({
     },
   })
 
-  const toast = useToast()
-
-  const { router } = useNavigation()
-
-  const { isPending, mutateAsync } = useTypeSafeMutation({
-    mutationKey: [isCreateForm ? 'createUser' : 'updateUser'],
-    invalidatedQueries: ['getUsers'],
-    onSuccess() {
-      toast.success({
-        title: '¡Perfecto!',
-        description: isCreateForm
-          ? 'Se ha creado el usuario'
-          : 'Se ha actualizado el usuario',
-      })
-
-      if (isCreateForm) {
-        router.replace('/admin/users')
-      }
-    },
-  })
-
-  const onSubmit: SubmitHandler<any> = async (data) => {
-    await mutateAsync(data, {
-      onError(e) {
-        throw e
-      },
-    })
-  }
+  const onSubmit: SubmitHandler<any> = async (data) => {}
 
   return (
     <Card>
@@ -99,10 +68,7 @@ const UsersForm: FC<UsersFormProps> = ({
             </div>
 
             <div className="flex w-full justify-end">
-              <Button
-                isLoading={isPending}
-                onClick={form.handleSubmit(onSubmit, console.log)}
-              >
+              <Button onClick={form.handleSubmit(onSubmit, console.log)}>
                 {isCreateForm ? 'Crear' : 'Actualizar'}
               </Button>
             </div>

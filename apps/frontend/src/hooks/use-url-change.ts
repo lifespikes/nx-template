@@ -5,5 +5,5 @@ export const useUrlChange = (onNavigationChange?: () => void) => {
   const { pathname } = useNavigation()
   useEffect(() => {
     onNavigationChange?.()
-  }, [pathname])
+  }, [onNavigationChange, pathname])
 }
