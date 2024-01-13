@@ -13,13 +13,13 @@ import { RouteListCommand } from '@app/app/commands/route-list.command';
 
 @Module({
   imports: [
-    AuthModule,
-    PrismaModule.forRoot({ isGlobal: true }),
     ConfigModule.forRoot({
       envFilePath: '../../.env',
       isGlobal: true,
       load: [...registerConfig()],
     }),
+    PrismaModule.forRoot({ isGlobal: true }),
+    AuthModule,
     UsersModule,
     CommandModule,
   ],
