@@ -1,15 +1,20 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './data/create-user.dto';
 import { UpdateUserDto } from './data/update-user.dto';
-import { PrismaService } from 'nestjs-prisma';
 import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { UserCreatedEvent } from '@app/app/users/events/user-created.event';
+import { type ExtendedPrismaClient } from '@app/app/prisma/extendedPrismaClient';
+import { CustomPrismaService } from 'nestjs-prisma';
 
 @Injectable()
 export class UsersService {
   constructor(
-    private prisma: PrismaService,
+    @Inject('PrismaService')
+    private prisma: CustomPrismaService<ExtendedPrismaClient>,
     private config: ConfigService,
+    private eventEmitter: EventEmitter2,
   ) {}
 
   async create(createUserDto: CreateUserDto) {
@@ -18,17 +23,25 @@ export class UsersService {
       this.config.get('auth.roundsOfHashing'),
     );
 
-    return this.prisma.user.create({
+    const user = await this.prisma.client.user.create({
       data: createUserDto,
     });
+
+    this.eventEmitter.emit('user.created', new UserCreatedEvent(user));
+
+    return user;
   }
 
   findAll() {
-    return this.prisma.user.findMany();
+    return this.prisma.client.user.findMany();
+  }
+
+  paginate() {
+    return this.prisma.client.user.paginate();
   }
 
   findOne(id: number) {
-    return this.prisma.user.findUnique({ where: { id } });
+    return this.prisma.client.user.findUnique({ where: { id } });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
@@ -39,13 +52,13 @@ export class UsersService {
       );
     }
 
-    return this.prisma.user.update({
+    return this.prisma.client.user.update({
       where: { id },
       data: updateUserDto,
     });
   }
 
   remove(id: number) {
-    return this.prisma.user.delete({ where: { id } });
+    return this.prisma.client.user.delete({ where: { id } });
   }
 }
