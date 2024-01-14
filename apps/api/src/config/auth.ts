@@ -21,7 +21,7 @@ export default registerConfig<AuthConfig>({
   name: 'auth',
   config: () => ({
     jtwSecret: process.env.JWT_SECRET,
-    roundsOfHashing: parseInt(process.env.JWT_ROUND_HASHING, 10) || 5432,
+    roundsOfHashing: parseInt(process.env.JWT_ROUND_HASHING, 10) || 10,
   }),
   envClass: EnvironmentVariables,
 });

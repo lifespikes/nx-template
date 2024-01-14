@@ -6,10 +6,13 @@
     "apps/*",
     "packages/*"
   ],
+  "bin": {
+    "sazon": "dist/apps/api/cli.js"
+  },
   "scripts": {
     "adonis:dev": "cd apps/api && yarn dev",
     "scripts:open-api-generate": "TS_NODE_PROJECT='./apps/api/tsconfig.json' && ts-node --esm scripts/generate-open-api-schema.mts",
-    "api:command": "nx build api && node dist/apps/api/cli.js",
+    "api:command": "node dist/apps/api/cli.js",
     "api:prisma": "cd apps/api && npx prisma generate"
   },
   "prisma": {
@@ -25,9 +28,9 @@
     "@headlessui/react": "^1.7.17",
     "@hookform/resolvers": "^3.3.2",
     "@lifespikes/ui": "^0.1.4",
-    "@nestjs/common": "^10.0.2",
+    "@nestjs/common": "^10.3.0",
     "@nestjs/config": "^3.1.1",
-    "@nestjs/core": "^10.0.2",
+    "@nestjs/core": "^10.3.0",
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.2",
@@ -69,6 +72,7 @@
     "loglevel": "^1.8.1",
     "loglevel-plugin-prefix": "^0.8.4",
     "lucide-react": "^0.292.0",
+    "nest-commander": "^3.12.5",
     "nestjs-command": "^3.1.4",
     "nestjs-prisma": "^0.22.0",
     "next": "^14.0.4",
