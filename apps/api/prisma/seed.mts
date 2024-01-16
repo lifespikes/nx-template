@@ -1,5 +1,8 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
+import { getApp } from '../src/bootstrap';
+import { ConfigService } from '@nestjs/config';
+import { UsersService } from '../src/app/users/users.service';
 
 const prisma = new PrismaClient();
 
@@ -16,12 +19,17 @@ const userData: Omit<Prisma.UserCreateInput, 'password'>[] = [
 ];
 
 async function main() {
-  for (const u of userData) {
-    const user = await prisma.user.create({
-      data: {
-        ...u,
-        password: await bcrypt.hash('secret', 10),
-      },
+  const app = await getApp();
+  const config = app.get(ConfigService);
+  const users = app.get(UsersService);
+
+  for (const { name, email, phone } of userData) {
+    const user = await users.create({
+      name,
+      email,
+      phone,
+      password: await bcrypt.hash('secret', config.get('auth.roundsOfHashing')),
+      isVerified: true,
     });
 
     console.log(`Created user with id: ${user.id}`);

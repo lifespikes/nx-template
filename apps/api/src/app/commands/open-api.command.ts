@@ -1,36 +1,33 @@
-import { Command, Option } from 'nestjs-command';
-import { Injectable } from '@nestjs/common';
+import { Command, CommandRunner, Option } from 'nest-commander';
 import { createSwaggerDocument, getApp } from '@app/bootstrap';
-import nodePath from 'path';
-import * as process from 'process';
+import nodePath from 'node:path';
 import fs from 'fs-extra';
 
-@Injectable()
-export class OpenApiCommand {
-  constructor() {}
+type CommandOptions = {
+  path: string;
+};
 
-  @Command({
-    command: 'generate:open-api-file',
-    describe: 'Generate the open api schema of the api',
-  })
-  async create(
-    @Option({
-      name: 'path',
-      describe: 'Path where the file will be saved',
-      type: 'string',
-      demandOption: true,
-    })
-    path: string,
-  ) {
+@Command({
+  name: 'generate:open-api-file',
+  description: 'Generate the open api schema of the api',
+})
+export class OpenApiCommand extends CommandRunner {
+  async run(passedParam: string[], options: CommandOptions) {
     const app = await getApp();
-
-    const openApiObj = createSwaggerDocument(app);
-    const json = JSON.stringify(openApiObj, null, 4);
-
-    const openApiPath = nodePath.join(process.cwd(), path);
+    const document = createSwaggerDocument(app);
+    const json = JSON.stringify(document, null, 4);
+    const openApiPath = nodePath.join(process.cwd(), options.path);
 
     fs.outputFileSync(openApiPath, json);
 
     console.info(`File created at ${openApiPath}`);
+  }
+
+  @Option({
+    flags: '-p, --path <path>',
+    description: 'Path where the file will be saved',
+  })
+  setPath(path: string) {
+    return path;
   }
 }

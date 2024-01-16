@@ -1,17 +1,13 @@
-import { Command } from 'nestjs-command';
-import { Injectable } from '@nestjs/common';
 import { getApp } from '@app/bootstrap';
 import expressListRoutes from 'express-list-routes';
+import { Command, CommandRunner } from 'nest-commander';
 
-@Injectable()
-export class RouteListCommand {
-  constructor() {}
-
-  @Command({
-    command: 'route:list',
-    describe: 'Get the routes registered in the application',
-  })
-  async create() {
+@Command({
+  name: 'route:list',
+  description: 'Get the routes registered in the application',
+})
+export class RouteListCommand extends CommandRunner {
+  async run() {
     const app = await getApp();
 
     await app.listen(0);

@@ -18,7 +18,11 @@ export const createSwaggerDocument = (app: INestApplication<any>) => {
 };
 
 export const getApp = async () => {
+  /**
+   * Initialize the NestJS application
+   */
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix(globalPrefix);
+
   return app;
 };

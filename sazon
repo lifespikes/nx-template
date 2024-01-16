@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+const cwd = process.cwd();
+
+function getCli() {
+  const cliPath = path.join(cwd, 'dist/apps/api/cli.js');
+  if (fs.existsSync(cliPath)) {
+    return require(cliPath);
+  }
+  return null;
+}
+
+const cli = getCli();
+
+if (cli) {
+  return cli;
+}
+
+console.log('No dist folder found. Building...');
+execSync('npx nx build api', { cwd, stdio: 'inherit' });
+console.log('Build complete.');
+console.log('Try running again.');
+
+
