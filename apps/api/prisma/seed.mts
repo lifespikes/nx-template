@@ -9,13 +9,13 @@ const prisma = new PrismaClient();
 const userData: Omit<Prisma.UserCreateInput, 'password'>[] = [
   {
     name: 'Santiago Guerrero',
-    email: 'test@test.com'
+    email: 'test@test.com',
   },
 
   {
     name: 'Santiago 258',
-    email: 'santigp258@gmail.com'
-  }
+    email: 'santigp258@gmail.com',
+  },
 ];
 
 async function main() {
@@ -29,7 +29,7 @@ async function main() {
       email,
       phone,
       password: await bcrypt.hash('secret', config.get('auth.roundsOfHashing')),
-      isVerified: true
+      isVerified: true,
     });
 
     console.log(`Created user with id: ${user.id}`);
