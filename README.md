@@ -62,6 +62,18 @@ We also strongly recommend using [WebStorm](https://www.jetbrains.com/webstorm/)
 - Orval integration
 - General NX configuration
 
+# Run Command
+
+At the moment, the possible way for commands to be run is as follows:
+
+- You must build the api with the command `nx build api`.
+- Run `node spikey <command-name>`.
+
+But if you want to run your command directly you can run,`yarn api:command <command-name>`
+
+To read more information, please read the [nestjs-commander documentation](https://docs.nestjs.com/recipes/nest-commander).
+
+
 ## Notes:
 
 If you want to add more features, components or utilities to the Lifespikes ui, you can make a PR to this repo: [lifespikes/packages](https://github.com/lifespikes/packages)

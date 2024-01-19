@@ -7,7 +7,6 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import registerConfig from '@app/config';
-import { CommandModule } from 'nestjs-command';
 import { OpenApiCommand } from '@app/app/commands/open-api.command';
 import { RouteListCommand } from '@app/app/commands/route-list.command';
 import { EventEmitterModule } from '@nestjs/event-emitter';
@@ -30,7 +29,6 @@ import { ExtendedPrismaService } from '@app/app/prisma/extended-prisma.service';
     }),
     AuthModule,
     UsersModule,
-    CommandModule,
   ],
   controllers: [AppController],
   providers: [AppService, OpenApiCommand, RouteListCommand],

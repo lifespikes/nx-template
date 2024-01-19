@@ -65,13 +65,3 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 - [NX React overview](https://nx.dev/nx-api/react/documents/overview)
 - [NX Next overview](https://nx.dev/nx-api/next/documents/overview)
 
-# Run Command
-
-At the moment, the possible way for commands to be run is as follows:
-
-- You must build the api with the command `nx build api`.
-- Run `node dist/apps/api/cli.js <command-name>`.
-
-But if you want to run your command directly you can run,`yarn api:command <command-name>`
-
-To read more information, please read the [nestjs-commands documentation](https://www.npmjs.com/package/nestjs-command).
