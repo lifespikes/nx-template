@@ -1,16 +1,12 @@
-import {
-  Injectable,
-  NotFoundException,
-  UnauthorizedException,
-  UnprocessableEntityException,
-} from '@nestjs/common';
-import { PrismaService } from 'nestjs-prisma';
+import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AuthEntity } from '@app/app/auth/entity/auth.entity';
+import { PrismaService } from 'nestjs-prisma';
 
 @Injectable()
 export class AuthService {
   constructor(
+    @Inject('PrismaService')
     private prisma: PrismaService,
     private jwtService: JwtService,
   ) {}

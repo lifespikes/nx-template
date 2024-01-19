@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sazon/api-requests": ["packages/api-requests/src/index.ts"]
+      "@spikey/api-requests": ["packages/api-requests/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

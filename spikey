@@ -22,5 +22,6 @@ console.log('No dist folder found. Building...');
 execSync('npx nx build api', { cwd, stdio: 'inherit' });
 console.log('Build complete.');
 console.log('Try running again.');
+console.log('Remember that every time you make a change in the api, you must run npx nx build api');
 
 

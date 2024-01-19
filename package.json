@@ -1,5 +1,5 @@
 {
-  "name": "@sazon/source",
+  "name": "@spikey/source",
   "version": "0.0.0",
   "license": "MIT",
   "workspaces": [
@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "bin": {
-    "sazon": "dist/apps/api/cli.js"
+    "spikey": "dist/apps/api/cli.js"
   },
   "scripts": {
     "adonis:dev": "cd apps/api && yarn dev",

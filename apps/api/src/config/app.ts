@@ -27,7 +27,7 @@ export default registerConfig<AppConfig>({
   name: 'app',
   config: () => ({
     port: parseInt(process.env.APP_PORT, 10) || 3000,
-    name: process.env.APP_NAME ?? 'Unnamed Restaurant',
+    name: process.env.APP_NAME ?? 'Spikey',
     description: process.env.APP_DESCRIPTION ?? 'Awesome API',
   }),
   envClass: EnvironmentVariables,

@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { UserCreatedEvent } from '@app/app/users/events/user-created.event';
-import { type ExtendedPrismaClient } from '@app/app/prisma/extendedPrismaClient';
+import { type ExtendedPrismaClient } from '@app/app/prisma/extended-prisma-client';
 import { CustomPrismaService } from 'nestjs-prisma';
 
 @Injectable()

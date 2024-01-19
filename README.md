@@ -1,6 +1,6 @@
-# Project Sazón
+# Lifespikes template
 
-A suite of products to help you manage your restaurant or hospitality business. Official market name not yet decided.
+Starter made for all projects related to Lifespikes
 
 ## Helpful Links
 
@@ -52,3 +52,16 @@ We also strongly recommend using [WebStorm](https://www.jetbrains.com/webstorm/)
    nx serve frontend
    nx serve api
    ```
+
+## Features:
+
+- Basic authentication configuration
+- Configuration of environment variable handling
+- Commands configuration
+- Swagger integration
+- Orval integration
+- General NX configuration
+
+## Notes:
+
+If you want to add more features, components or utilities to the Lifespikes ui, you can make a PR to this repo: [lifespikes/packages](https://github.com/lifespikes/packages)
