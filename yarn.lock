@@ -3115,7 +3115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lifespikes/ui@npm:^0.1.4":
+"@lifespikes/ui@npm:latest":
   version: 0.1.4
   resolution: "@lifespikes/ui@npm:0.1.4"
   dependencies:
@@ -6130,7 +6130,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.3.1"
     "@headlessui/react": "npm:^1.7.17"
     "@hookform/resolvers": "npm:^3.3.2"
-    "@lifespikes/ui": "npm:^0.1.4"
+    "@lifespikes/ui": "npm:latest"
     "@nestjs/common": "npm:^10.3.0"
     "@nestjs/config": "npm:^3.1.1"
     "@nestjs/core": "npm:^10.3.0"
