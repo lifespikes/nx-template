@@ -1,8 +1,10 @@
-import { Injectable, UnprocessableEntityException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AuthEntity } from '@spikey/api/app/auth/entity/auth.entity';
 import { UsersService } from '@spikey/api/app/users/users.service';
 import { HashService } from '@spikey/api/app/auth/hash.service';
+import { error } from '@spikey/shared/responses';
+import { StatusCodes } from 'http-status-codes';
 
 @Injectable()
 export class AuthService {
@@ -17,9 +19,7 @@ export class AuthService {
     const user = await this.userService.findByEmail(email);
 
     if (!user || !(user?.password && this.hashService.compare(password, user.password))) {
-      throw new UnprocessableEntityException(
-        'The provided credentials are incorrect.'
-      );
+      error(StatusCodes.UNPROCESSABLE_ENTITY, { email: 'The provided credentials are incorrect.' });
     }
 
     return {

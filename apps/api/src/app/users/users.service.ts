@@ -1,4 +1,4 @@
-import { HttpException, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './data/create-user.dto';
 import { UpdateUserDto } from './data/update-user.dto';
 import { EventEmitter2 } from '@nestjs/event-emitter';
@@ -9,6 +9,7 @@ import { HashService } from '@spikey/api/app/auth/hash.service';
 import { UserType } from '@spikey/shared/types';
 import { getPermissions } from '@spikey/shared/permissions';
 import { StatusCodes } from 'http-status-codes';
+import { error } from '@spikey/shared/responses';
 
 @Injectable()
 export class UsersService {
@@ -22,7 +23,7 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto) {
     if (await this.findByEmail(createUserDto.email)) {
-      throw new HttpException('The user with this email already exists', StatusCodes.UNPROCESSABLE_ENTITY);
+      error(StatusCodes.UNPROCESSABLE_ENTITY, 'The user with this email already exists');
     }
 
     createUserDto.password = this.hashService.hash(createUserDto.password);

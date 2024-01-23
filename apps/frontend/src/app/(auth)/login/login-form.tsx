@@ -67,7 +67,7 @@ const LoginForm = () => {
         <InputField
           label="Correo electronico"
           name="email"
-          type="password"
+          type="email"
           autoComplete="email"
         />
         <InputField
