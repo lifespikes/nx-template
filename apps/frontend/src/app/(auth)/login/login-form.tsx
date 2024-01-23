@@ -6,7 +6,7 @@ import { useForm } from '@/hooks/use-form';
 import { checkCredentialsSchema } from '@/constants/yup-schemas/users.schema';
 import { signIn } from 'next-auth/react';
 import { ChevronRight } from 'lucide-react';
-import { Button, Form, InputField, useToast } from '@lifespikes/ui';
+import { Button, Form, InputField } from '@lifespikes/ui';
 
 const LoginForm = () => {
   const form = useForm<CheckCredentialsSchemaType>({
@@ -18,12 +18,11 @@ const LoginForm = () => {
     formState: { isSubmitting }
   } = form;
 
-  const toast = useToast();
 
   const handleSubmit: SubmitHandler<CheckCredentialsSchemaType> = async (
     data
   ) => {
-    const resp = await signIn('credentials', {
+    await signIn('credentials', {
       ...data,
       redirect: true,
       callbackUrl: '/'
