@@ -1,4 +1,4 @@
-import { getApp } from '@app/bootstrap';
+import { getApp } from '@spikey/api/bootstrap';
 import expressListRoutes from 'express-list-routes';
 import { Command, CommandRunner } from 'nest-commander';
 

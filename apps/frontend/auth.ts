@@ -10,7 +10,7 @@ export const PUBLIC_ROUTES = ['/login', '/error']
 
 export const config = {
   providers: [
-    /* 
+    /*
         GoogleProvider({
                   clientId: process.env.GOOGLE_CLIENT_ID,
                   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -38,7 +38,7 @@ export const config = {
             await checkCredentials(
               credentials as unknown as CheckCredentialsSchemaType,
             )
-          ).data
+          )
           logger.debug('Getting user data', { user })
 
           return user as any

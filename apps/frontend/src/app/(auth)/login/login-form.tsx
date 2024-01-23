@@ -1,62 +1,34 @@
-'use client'
+'use client';
 
-import { SubmitHandler } from 'react-hook-form'
-import { CheckCredentialsSchemaType } from '@/types/schemas'
-import { useForm } from '@/hooks/use-form'
-import { checkCredentialsSchema } from '@/constants/yup-schemas/users.schema'
-import { signIn } from 'next-auth/react'
-import { ChevronRight } from 'lucide-react'
-import { Button, Form, InputField, useToast } from '@lifespikes/ui'
+import { SubmitHandler } from 'react-hook-form';
+import { CheckCredentialsSchemaType } from '@/types/schemas';
+import { useForm } from '@/hooks/use-form';
+import { checkCredentialsSchema } from '@/constants/yup-schemas/users.schema';
+import { signIn } from 'next-auth/react';
+import { ChevronRight } from 'lucide-react';
+import { Button, Form, InputField } from '@lifespikes/ui';
 
 const LoginForm = () => {
   const form = useForm<CheckCredentialsSchemaType>({
     schema: checkCredentialsSchema,
-    defaultValues: { password: '', email: '' },
-  })
+    defaultValues: { password: '', email: '' }
+  });
 
   const {
-    formState: { isSubmitting },
-  } = form
+    formState: { isSubmitting }
+  } = form;
 
-  const toast = useToast()
 
   const handleSubmit: SubmitHandler<CheckCredentialsSchemaType> = async (
-    data,
+    data
   ) => {
-    const resp = await signIn('credentials', {
+    await signIn('credentials', {
       ...data,
-      redirect: false,
-    })
+      redirect: true,
+      callbackUrl: '/'
+    });
 
-    const error = resp?.error as any
-
-    const des = (resp as any)?.description
-
-    const errorFn = () => {
-      toast.destructive({
-        title: 'No se pudo iniciar sesión',
-        description: 'Por favor intente nuevamente',
-      })
-    }
-
-    if (des) {
-      errorFn()
-      throw { response: { data: JSON.parse(des) } }
-    }
-
-    if (error) {
-      return errorFn()
-    }
-
-    toast.success({
-      title: 'Bienvenido!',
-      description: 'Será redireccionado a la página principal',
-    })
-
-    setTimeout(() => {
-      window.location.replace('/')
-    }, 500)
-  }
+  };
 
   return (
     <Form {...form}>
@@ -67,7 +39,7 @@ const LoginForm = () => {
         <InputField
           label="Correo electronico"
           name="email"
-          type="password"
+          type="email"
           autoComplete="email"
         />
         <InputField
@@ -88,7 +60,7 @@ const LoginForm = () => {
         </div>
       </form>
     </Form>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

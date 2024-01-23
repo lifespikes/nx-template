@@ -1,11 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsBoolean,
-  IsNotEmpty,
-  IsString,
-  MaxLength,
-  MinLength,
-} from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsString, MaxLength, MinLength, IsEnum } from 'class-validator';
+import { Role } from '@prisma/client';
 
 export class CreateUserDto {
   @IsString()
@@ -33,4 +28,9 @@ export class CreateUserDto {
   @IsBoolean()
   @ApiProperty()
   isVerified: boolean;
+
+
+  @IsEnum(Role)
+  @ApiProperty()
+  role: Role;
 }

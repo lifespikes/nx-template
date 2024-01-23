@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UserCreatedEvent } from '@app/app/users/events/user-created.event';
+import { UserCreatedEvent } from '@spikey/api/app/users/events/user-created.event';
 import { OnEvent } from '@nestjs/event-emitter';
 
 @Injectable()

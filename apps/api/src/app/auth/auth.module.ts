@@ -4,9 +4,10 @@ import { AuthController } from './auth.controller';
 
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from '@app/app/auth/jwt.strategy';
-import { UsersModule } from '@app/app/users/users.module';
+import { JwtStrategy } from '@spikey/api/app/auth/strategies/jwt.strategy';
+import { UsersModule } from '@spikey/api/app/users/users.module';
 import { ConfigService } from '@nestjs/config';
+import { HashService } from '@spikey/api/app/auth/hash.service';
 
 @Module({
   imports: [
@@ -16,15 +17,17 @@ import { ConfigService } from '@nestjs/config';
         return {
           secret: config.get<string>('auth.jtwSecret'),
           signOptions: {
-            expiresIn: '5m',
-          },
+            expiresIn: '5m'
+          }
         };
       },
-      inject: [ConfigService],
+      inject: [ConfigService]
     }),
-    UsersModule,
+    UsersModule
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, HashService],
+  exports: [HashService]
 })
-export class AuthModule {}
+export class AuthModule {
+}

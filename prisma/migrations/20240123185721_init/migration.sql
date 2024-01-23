@@ -6,6 +6,7 @@ CREATE TABLE `users` (
     `phone` VARCHAR(191) NULL,
     `password` VARCHAR(191) NOT NULL,
     `is_verified` BOOLEAN NOT NULL DEFAULT false,
+    `role` ENUM('ADMIN', 'DEMO', 'USER', 'SUPER_USER') NOT NULL DEFAULT 'USER',
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updated_at` DATETIME(3) NOT NULL,
 

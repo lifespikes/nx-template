@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = env("DB_URL")
 }
 
 model User {
@@ -17,9 +17,17 @@ model User {
   phone      String?
   password   String
   isVerified Boolean @default(false) @map("is_verified")
+  role       Role    @default(USER)
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("users")
+}
+
+enum Role {
+  ADMIN
+  DEMO
+  USER
+  SUPER_USER
 }
