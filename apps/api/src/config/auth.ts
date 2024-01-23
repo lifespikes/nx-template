@@ -1,5 +1,5 @@
 import { IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
-import { registerConfig } from '@app/app/utils/register-config';
+import { registerConfig } from '@app/utils/register-config';
 
 type AuthConfig = {
   jtwSecret: string;

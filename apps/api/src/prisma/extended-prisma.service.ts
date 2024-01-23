@@ -3,7 +3,7 @@ import { CustomPrismaClientFactory } from 'nestjs-prisma';
 import {
   ExtendedPrismaClient,
   extendedPrismaClient,
-} from '@app/app/prisma/extended-prisma-client';
+} from '@app/prisma/extended-prisma-client';
 
 @Injectable()
 export class ExtendedPrismaService

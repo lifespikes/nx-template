@@ -10,27 +10,28 @@ import registerConfig from '@app/config';
 import { OpenApiCommand } from '@app/app/commands/open-api.command';
 import { RouteListCommand } from '@app/app/commands/route-list.command';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { ExtendedPrismaService } from '@app/app/prisma/extended-prisma.service';
+import { ExtendedPrismaService } from '@app/prisma/extended-prisma.service';
 
 @Module({
   imports: [
     EventEmitterModule.forRoot({
-      global: true,
+      global: true
     }),
     ConfigModule.forRoot({
       envFilePath: '../../.env',
       isGlobal: true,
-      load: [...registerConfig()],
+      load: [...registerConfig()]
     }),
     CustomPrismaModule.forRootAsync({
       name: 'PrismaService',
       useClass: ExtendedPrismaService,
-      isGlobal: true,
+      isGlobal: true
     }),
     AuthModule,
-    UsersModule,
+    UsersModule
   ],
   controllers: [AppController],
-  providers: [AppService, OpenApiCommand, RouteListCommand],
+  providers: [AppService, OpenApiCommand, RouteListCommand]
 })
-export class AppModule {}
+export class AppModule {
+}

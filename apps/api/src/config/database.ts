@@ -6,7 +6,7 @@ import {
   Min,
   ValidateIf,
 } from 'class-validator';
-import { registerConfig } from '@app/app/utils/register-config';
+import { registerConfig } from '@app/utils/register-config';
 
 type DatabaseConfig = {
   url: string;

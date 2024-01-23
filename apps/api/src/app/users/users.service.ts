@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { UserCreatedEvent } from '@app/app/users/events/user-created.event';
-import { type ExtendedPrismaClient } from '@app/app/prisma/extended-prisma-client';
+import { type ExtendedPrismaClient } from '@app/prisma/extended-prisma-client';
 import { CustomPrismaService } from 'nestjs-prisma';
 
 @Injectable()
@@ -42,6 +42,12 @@ export class UsersService {
 
   findOne(id: number) {
     return this.prisma.client.user.findUnique({ where: { id } });
+  }
+
+  user(id: number) {
+    const user = this.prisma.client.user.findUnique({ where: { id } });
+
+    return user;
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
