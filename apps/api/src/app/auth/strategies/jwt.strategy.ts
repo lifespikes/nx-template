@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { UsersService } from '@app/app/users/users.service';
+import { UsersService } from '@spikey/api/app/users/users.service';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate(payload: { userId: number }) {
-    const user = await this.usersService.user(payload.userId);
+    const user = this.usersService.user(payload.userId);
 
     if (!user) {
       throw new UnauthorizedException();

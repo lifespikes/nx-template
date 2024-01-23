@@ -2,24 +2,25 @@
   "name": "@spikey/source",
   "version": "0.0.0",
   "license": "MIT",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "bin": {
     "spikey": "dist/apps/api/cli.js"
   },
   "scripts": {
     "scripts:open-api-generate": "TS_NODE_PROJECT='./apps/api/tsconfig.json' && ts-node --esm scripts/generate-open-api-schema.mts",
     "api:command": "node spikey",
-    "api:prisma": "cd apps/api && npx prisma generate"
+    "database:migrate": "prisma migrate",
+    "database:push": "prisma db push",
+    "database:seed": "npx nx build api && node spikey prisma:seed",
+    "prisma:seed": "prisma db seed",
+    "database:setup": "yarn database:push && yarn database:seed",
+    "database:validate": "prisma validate"
   },
   "prisma": {
-    "seed": "ts-node --esm prisma/seed.mts"
+    "seed": "yarn database:seed"
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "esModuleInterop": true
     }
   },
   "private": true,
@@ -35,7 +36,7 @@
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.2",
     "@nx/next": "17.2.8",
-    "@prisma/client": "^5.8.0",
+    "@prisma/client": "^5.8.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -176,7 +177,7 @@
     "postcss": "^8",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
-    "prisma": "^5.6.0",
+    "prisma": "^5.8.1",
     "proxy-addr": "^2.0.7",
     "react-refresh": "^0.10.0",
     "tailwindcss": "^3.3.0",

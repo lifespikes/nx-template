@@ -6,6 +6,7 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
@@ -22,10 +23,13 @@
     ],
     "paths": {
       "@spikey/api-requests/*": [
-        "packages/api-requests/src/*"
+        "./packages/api-requests/src/*"
+      ],
+      "@spikey/api/*": [
+        "./apps/api/src/*"
       ],
       "@spikey/shared/*": [
-        "packages/shared/src/lib/*"
+        "./packages/shared/src/lib/*"
       ]
     }
   },

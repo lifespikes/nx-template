@@ -1,8 +1,8 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { AuthEntity } from '@app/app/auth/entity/auth.entity';
-import { LoginDto } from '@app/app/auth/data/login.dto';
+import { AuthEntity } from '@spikey/api/app/auth/entity/auth.entity';
+import { LoginDto } from '@spikey/api/app/auth/data/login.dto';
 
 @Controller('auth')
 @ApiTags('auth')

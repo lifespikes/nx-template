@@ -1,30 +1,34 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { HttpException, Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './data/create-user.dto';
 import { UpdateUserDto } from './data/update-user.dto';
-import * as bcrypt from 'bcrypt';
-import { ConfigService } from '@nestjs/config';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { UserCreatedEvent } from '@app/app/users/events/user-created.event';
-import { type ExtendedPrismaClient } from '@app/prisma/extended-prisma-client';
+import { UserCreatedEvent } from '@spikey/api/app/users/events/user-created.event';
+import { type ExtendedPrismaClient } from '@spikey/api/prisma/extended-prisma-client';
 import { CustomPrismaService } from 'nestjs-prisma';
+import { HashService } from '@spikey/api/app/auth/hash.service';
+import { UserType } from '@spikey/shared/types';
+import { getPermissions } from '@spikey/shared/permissions';
+import { StatusCodes } from 'http-status-codes';
 
 @Injectable()
 export class UsersService {
   constructor(
     @Inject('PrismaService')
     private prisma: CustomPrismaService<ExtendedPrismaClient>,
-    private config: ConfigService,
     private eventEmitter: EventEmitter2,
-  ) {}
+    private hashService: HashService
+  ) {
+  }
 
   async create(createUserDto: CreateUserDto) {
-    createUserDto.password = await bcrypt.hash(
-      createUserDto.password,
-      this.config.get('auth.roundsOfHashing'),
-    );
+    if (await this.findByEmail(createUserDto.email)) {
+      throw new HttpException('The user with this email already exists', StatusCodes.UNPROCESSABLE_ENTITY);
+    }
+
+    createUserDto.password = this.hashService.hash(createUserDto.password);
 
     const user = await this.prisma.client.user.create({
-      data: createUserDto,
+      data: createUserDto
     });
 
     this.eventEmitter.emit('user.created', new UserCreatedEvent(user));
@@ -44,23 +48,29 @@ export class UsersService {
     return this.prisma.client.user.findUnique({ where: { id } });
   }
 
-  user(id: number) {
-    const user = this.prisma.client.user.findUnique({ where: { id } });
+  findByEmail(email: string) {
+    return this.prisma.client.user.findUnique({ where: { email } });
+  }
 
-    return user;
+  async user(id: number) {
+    const user = await this.prisma.client.user.findUnique({ where: { id } });
+
+    const _user: UserType = {
+      ...user,
+      permissions: getPermissions(user.role)
+    };
+
+
+    return _user;
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
     if (updateUserDto.password) {
-      updateUserDto.password = await bcrypt.hash(
-        updateUserDto.password,
-        this.config.get('auth.roundsOfHashing'),
-      );
+      updateUserDto.password = this.hashService.hash(updateUserDto.password);
     }
-
     return this.prisma.client.user.update({
       where: { id },
-      data: updateUserDto,
+      data: updateUserDto
     });
   }
 

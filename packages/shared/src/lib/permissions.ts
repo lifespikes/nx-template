@@ -6,27 +6,28 @@ export const HAS_PERMISSION_KEY = 'has_permission';
 
 export const permissions = {
   accessAdminControl: 'accessAdminControl',
-  accessAssistant: 'accessAssistant',
+  createUsers: 'createUsers',
   createAccess: 'createAccess',
   createAccount: 'createAccount'
 } as const;
 
 export function getPermissions(aRole: Role): string[] {
   switch (aRole) {
+    case 'SUPER_USER':
+      return Object.values(permissions);
     case 'ADMIN':
       return [
         permissions.accessAdminControl,
-        permissions.accessAssistant,
         permissions.createAccess,
-        permissions.createAccount
+        permissions.createAccount,
+        permissions.createUsers
       ];
 
     case 'DEMO':
-      return [permissions.accessAssistant];
+      return [permissions.accessAdminControl];
 
     case 'USER':
       return [
-        permissions.accessAssistant,
         permissions.createAccess,
         permissions.createAccount
       ];

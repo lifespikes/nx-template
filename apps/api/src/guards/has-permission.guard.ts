@@ -1,4 +1,4 @@
-import { HAS_PERMISSION_KEY, hasPermission } from '@spikey/shared/src';
+import { HAS_PERMISSION_KEY, hasPermission } from '@spikey/shared/permissions';
 import {
   CanActivate,
   ExecutionContext,
@@ -20,8 +20,9 @@ export class HasPermissionGuard implements CanActivate {
       context.getHandler()
     );
 
+    console.log(requiredPermission, user.permissions);
+
     if (!requiredPermission) {
-      // No specific permissions required
       return true;
     }
 

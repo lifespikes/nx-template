@@ -1,7 +1,7 @@
 import { Command, CommandRunner, Option } from 'nest-commander';
-import { createSwaggerDocument, getApp } from '@app/bootstrap';
-import nodePath from 'node:path';
-import fs from 'fs-extra';
+import { createSwaggerDocument, getApp } from '@spikey/api/bootstrap';
+import * as nodePath from 'node:path';
+import * as fs from 'fs-extra';
 
 type CommandOptions = {
   path: string;

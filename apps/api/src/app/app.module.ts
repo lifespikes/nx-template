@@ -6,11 +6,12 @@ import { CustomPrismaModule } from 'nestjs-prisma';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
-import registerConfig from '@app/config';
-import { OpenApiCommand } from '@app/app/commands/open-api.command';
-import { RouteListCommand } from '@app/app/commands/route-list.command';
+import registerConfig from '@spikey/api/config';
+import { OpenApiCommand } from '@spikey/api/commands/open-api.command';
+import { RouteListCommand } from '@spikey/api/commands/route-list.command';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { ExtendedPrismaService } from '@app/prisma/extended-prisma.service';
+import { ExtendedPrismaService } from '@spikey/api/prisma/extended-prisma.service';
+import { PrismaSeedCommand } from '@spikey/api/commands/prisma-seed.command';
 
 @Module({
   imports: [
@@ -31,7 +32,7 @@ import { ExtendedPrismaService } from '@app/prisma/extended-prisma.service';
     UsersModule
   ],
   controllers: [AppController],
-  providers: [AppService, OpenApiCommand, RouteListCommand]
+  providers: [AppService, OpenApiCommand, RouteListCommand, PrismaSeedCommand]
 })
 export class AppModule {
 }

@@ -1,7 +1,7 @@
 import { registerAs } from '@nestjs/config';
 import { IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
-import { validateConfig } from '@app/utils/validate-config';
-import { registerConfig } from '@app/utils/register-config';
+import { validateConfig } from '@spikey/api/utils/validate-config';
+import { registerConfig } from '@spikey/api/utils/register-config';
 
 type AppConfig = {
   port: number;

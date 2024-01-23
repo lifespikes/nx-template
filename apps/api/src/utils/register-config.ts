@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import { ClassConstructor } from 'class-transformer';
-import { validateConfig } from '@app/utils/validate-config';
+import { validateConfig } from '@spikey/api/utils/validate-config';
 import { ConfigObject } from '@nestjs/config/dist/types';
 import { ConfigFactory } from '@nestjs/config/dist/interfaces';
 import { ConfigFactoryKeyHost } from '@nestjs/config/dist/utils/register-as.util';

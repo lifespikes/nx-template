@@ -1,5 +1,5 @@
 import { SetMetadata } from '@nestjs/common';
-import { HAS_PERMISSION_KEY } from '@spikey/shared/src';
+import { HAS_PERMISSION_KEY } from '@spikey/shared/permissions';
 
 
 export function HasPermission(permission: string) {
