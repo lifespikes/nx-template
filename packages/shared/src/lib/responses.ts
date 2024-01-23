@@ -1,8 +1,9 @@
 import { getReasonPhrase, StatusCodes } from 'http-status-codes';
 import { HttpException } from '@nestjs/common';
 
-export const success = (
-  data: Record<string, any> | string,
+
+export const success = <T extends Record<any, any>>(
+  data: T,
   statusCode: StatusCodes
 ) => {
   const status = statusCode ? statusCode : 200;

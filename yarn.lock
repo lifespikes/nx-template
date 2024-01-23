@@ -182,14 +182,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/core@npm:0.0.0-manual.e9863699":
-  version: 0.0.0-manual.e9863699
-  resolution: "@auth/core@npm:0.0.0-manual.e9863699"
+"@auth/core@npm:0.18.4":
+  version: 0.18.4
+  resolution: "@auth/core@npm:0.18.4"
   dependencies:
-    "@panva/hkdf": "npm:^1.0.4"
-    cookie: "npm:0.5.0"
-    jose: "npm:^4.11.1"
-    oauth4webapi: "npm:^2.0.6"
+    "@panva/hkdf": "npm:^1.1.1"
+    cookie: "npm:0.6.0"
+    jose: "npm:^5.1.0"
+    oauth4webapi: "npm:^2.3.0"
     preact: "npm:10.11.3"
     preact-render-to-string: "npm:5.2.3"
   peerDependencies:
@@ -197,26 +197,7 @@ __metadata:
   peerDependenciesMeta:
     nodemailer:
       optional: true
-  checksum: 84435a74b90a3da9b36bedeededf0bd6c236fe28c57bcd1798020b4ce764a887994c5104d60fddddd338babd6b0b64ffa4fe121912215718cc1d070db83e6b6a
-  languageName: node
-  linkType: hard
-
-"@auth/core@patch:@auth/core@npm%3A0.0.0-manual.e9863699#~/.yarn/patches/@auth-core-npm-0.0.0-manual.e9863699-38361b234d.patch":
-  version: 0.0.0-manual.e9863699
-  resolution: "@auth/core@patch:@auth/core@npm%3A0.0.0-manual.e9863699#~/.yarn/patches/@auth-core-npm-0.0.0-manual.e9863699-38361b234d.patch::version=0.0.0-manual.e9863699&hash=dfb91b"
-  dependencies:
-    "@panva/hkdf": "npm:^1.0.4"
-    cookie: "npm:0.5.0"
-    jose: "npm:^4.11.1"
-    oauth4webapi: "npm:^2.0.6"
-    preact: "npm:10.11.3"
-    preact-render-to-string: "npm:5.2.3"
-  peerDependencies:
-    nodemailer: ^6.8.0
-  peerDependenciesMeta:
-    nodemailer:
-      optional: true
-  checksum: af0fba415b2fa47518cbfcb22508b35e33f1fb1c3055d010a1555929d4552c6610c3297c725c930f65df1d31127c1078a8dfa530f1a2de21ceb56a149acae7f2
+  checksum: 6eb7b4af575db6281603a30c787757822e8632a8f227c4f5430aaf0ecce2b5713a0d94f01d4428eae7f37a504e0bfb4ab97f6e5799bdad5e59e79f203c376944
   languageName: node
   linkType: hard
 
@@ -4353,7 +4334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@panva/hkdf@npm:^1.0.4":
+"@panva/hkdf@npm:^1.1.1":
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
@@ -6248,7 +6229,7 @@ __metadata:
     nest-commander: "npm:^3.12.5"
     nestjs-prisma: "npm:^0.22.0"
     next: "npm:^14.0.4"
-    next-auth: "patch:next-auth@npm%3A5.0.0-beta.3#./.yarn/patches/next-auth-npm-5.0.0-beta.3-99e73d0178.patch"
+    next-auth: "npm:5.0.0-beta.4"
     next-themes: "npm:^0.2.1"
     nx: "npm:17.2.8"
     orval: "npm:^6.23.0"
@@ -11318,6 +11299,13 @@ __metadata:
   version: 0.5.0
   resolution: "cookie@npm:0.5.0"
   checksum: aae7911ddc5f444a9025fbd979ad1b5d60191011339bce48e555cb83343d0f98b865ff5c4d71fecdfb8555a5cafdc65632f6fce172f32aaf6936830a883a0380
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.6.0":
+  version: 0.6.0
+  resolution: "cookie@npm:0.6.0"
+  checksum: c1f8f2ea7d443b9331680598b0ae4e6af18a618c37606d1bbdc75bec8361cce09fe93e727059a673f2ba24467131a9fb5a4eec76bb1b149c1b3e1ccb268dc583
   languageName: node
   linkType: hard
 
@@ -16902,10 +16890,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^4.11.1":
-  version: 4.15.4
-  resolution: "jose@npm:4.15.4"
-  checksum: 20fa941597150dffc7af3f41d994500cc3e71cd650b755243dbd80d91cf26c1053f95b78af588f05cfc4371e492a67c5c7a48f689b8605145a8fe28b484d725b
+"jose@npm:^5.1.0":
+  version: 5.2.0
+  resolution: "jose@npm:5.2.0"
+  checksum: 40712b3f6149aa6fbb43630bc510485d17561d2c9adcaf25ec663f092ea587c3e2776826eccc2a12e82be9ad1a54e1266bc035aa5a35db1470ee7ff5082f45c6
   languageName: node
   linkType: hard
 
@@ -18499,11 +18487,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-auth@npm:5.0.0-beta.3":
-  version: 5.0.0-beta.3
-  resolution: "next-auth@npm:5.0.0-beta.3"
+"next-auth@npm:5.0.0-beta.4":
+  version: 5.0.0-beta.4
+  resolution: "next-auth@npm:5.0.0-beta.4"
   dependencies:
-    "@auth/core": "npm:experimental"
+    "@auth/core": "npm:0.18.4"
   peerDependencies:
     next: ^14
     nodemailer: ^6.6.5
@@ -18511,23 +18499,7 @@ __metadata:
   peerDependenciesMeta:
     nodemailer:
       optional: true
-  checksum: 83994335c7694abb9a168416fb35f26b480f99fc9734a8ee3e0c5802197cf4515bfb470edab2531c888a6cc39745da24c73fcca77f884d5c99170d12c624b574
-  languageName: node
-  linkType: hard
-
-"next-auth@patch:next-auth@npm%3A5.0.0-beta.3#./.yarn/patches/next-auth-npm-5.0.0-beta.3-99e73d0178.patch::locator=%40spikey%2Fsource%40workspace%3A.":
-  version: 5.0.0-beta.3
-  resolution: "next-auth@patch:next-auth@npm%3A5.0.0-beta.3#./.yarn/patches/next-auth-npm-5.0.0-beta.3-99e73d0178.patch::version=5.0.0-beta.3&hash=abc37e&locator=%40spikey%2Fsource%40workspace%3A."
-  dependencies:
-    "@auth/core": "npm:experimental"
-  peerDependencies:
-    next: ^14
-    nodemailer: ^6.6.5
-    react: ^18.2.0
-  peerDependenciesMeta:
-    nodemailer:
-      optional: true
-  checksum: 3610fa5af4954dc8486de3217693db966a6e60ef56bc8baa3b595464389bfca533a1abcbd4505236773461ca107a25727640cc22fbc661403773b1b7c2e10625
+  checksum: 8937d526a719771ca3f49cb5776ce9729db15e6b15d747751b92166b775ea3d2c25a8272f9b24179843a9c45a955daa3c382c00296b4523aa6f804192b77af1d
   languageName: node
   linkType: hard
 
@@ -19035,10 +19007,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oauth4webapi@npm:^2.0.6":
-  version: 2.6.0
-  resolution: "oauth4webapi@npm:2.6.0"
-  checksum: e0fc4b96cc5617574d49067776f968826a32a9aa176e4d4c17e285f854093782e971f4372ae44767848f9de11bf38891f95a7a7ecee573ee51e5361f3cd10a26
+"oauth4webapi@npm:^2.3.0":
+  version: 2.7.0
+  resolution: "oauth4webapi@npm:2.7.0"
+  checksum: 47cc610a95cbb9f22199f66bf8c43b6cfbd0bec5cfb7e46b7dcad9e7db424e34f0b2485b7c8ec51d08c0b4d16c419be054768997fc6342bf02c832ffafc99b77
   languageName: node
   linkType: hard
 

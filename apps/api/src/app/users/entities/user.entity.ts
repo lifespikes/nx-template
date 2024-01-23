@@ -28,7 +28,9 @@ export class UserEntity implements User {
   @ApiProperty()
   isVerified: boolean;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: Role.USER
+  })
   role: Role;
 
   @Exclude()
