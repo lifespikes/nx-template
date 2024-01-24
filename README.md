@@ -6,7 +6,6 @@ Starter made for all projects related to Lifespikes
 
 You can find documentation and other helpful information in the following places:
 
-- [Primary Notion Board](https://www.notion.so/Project-Saz-n-1b737a16353f4c90a90d89ac1997591a?pvs=4)
 - [Nx Monorepo README](./docs/nx-monorepo.md)
 - [NestJS Docs](https://docs.nestjs.com/)
 - [Prisma ORM Docs](https://www.prisma.io/docs/)
