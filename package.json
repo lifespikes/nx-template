@@ -2,6 +2,10 @@
   "name": "@spikey/source",
   "version": "0.0.0",
   "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "bin": {
     "spikey": "dist/apps/api/cli.js"
   },
@@ -12,6 +16,7 @@
     "database:push": "prisma db push",
     "database:seed": "npx nx build api && node spikey prisma:seed",
     "prisma:seed": "prisma db seed",
+    "prisma:generate": "npx prisma generate",
     "database:setup": "yarn database:push && yarn database:seed",
     "database:validate": "prisma validate"
   },
