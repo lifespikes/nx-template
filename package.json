@@ -60,7 +60,7 @@
     "@swc/helpers": "~0.5.2",
     "@tanstack/react-query": "^5.8.7",
     "@tanstack/react-query-devtools": "^5.8.7",
-    "@tanstack/react-query-next-experimental": "^5.8.7",
+    "@tanstack/react-query-next-experimental": "^5.18.0",
     "@tanstack/react-table": "^8.10.7",
     "apexcharts": "^3.44.2",
     "axios": "^1.0.0",
