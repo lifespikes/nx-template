@@ -1,48 +1,48 @@
 import { UserType } from '@spikey/shared/types';
 import { Role } from '@prisma/client';
-
+import { without } from '@spikey/shared/lodash';
 
 export const HAS_PERMISSION_KEY = 'has_permission';
 
-export const permissions = {
-  accessAdminControl: 'accessAdminControl',
-  createUsers: 'createUsers',
-  createAccess: 'createAccess',
-  createAccount: 'createAccount'
-} as const;
+const resources = ['user'] as const;
+const crud = ['create', 'viewAny', 'view', 'update', 'delete'] as const;
+const basePermissions = resources.flatMap((resource: Resource) =>
+  crud.map((action: Crud) => `${resource}:${action}`)
+) as PermissionType[];
 
-export function getPermissions(aRole: Role): string[] {
+type Crud = (typeof crud)[number];
+type Resource = (typeof resources)[number];
+export type PermissionType = `${Resource}:${Crud}`;
+
+export function getAllPermissions(aRole: Role): PermissionType[] {
   switch (aRole) {
     case 'SUPER_USER':
-      return Object.values(permissions);
     case 'ADMIN':
-      return [
-        permissions.accessAdminControl,
-        permissions.createAccess,
-        permissions.createAccount,
-        permissions.createUsers
-      ];
-
+      return basePermissions;
     case 'DEMO':
-      return [permissions.accessAdminControl];
-
     case 'USER':
-      return [
-        permissions.createAccess,
-        permissions.createAccount
-      ];
-
     default:
-      return [];
+      return without(
+        basePermissions,
+        'user:delete'
+      );
   }
 }
 
-
 export function hasPermission(
-  aPermissions: string[] = [],
-  aPermission: string
+  aPermissions: PermissionType[] = [],
+  aPermission: PermissionType
 ) {
   return aPermissions.includes(aPermission);
+}
+
+export function hasAnyPermission(
+  aPermissions: PermissionType[] = [],
+  aPermissionsToCheck: PermissionType[]
+) {
+  return aPermissions.some((permission) =>
+    aPermissionsToCheck.includes(permission)
+  );
 }
 
 export function hasRole(aUser: UserType, aRole: Role): boolean {

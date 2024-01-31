@@ -1,4 +1,4 @@
-import { HAS_PERMISSION_KEY, hasPermission } from '@spikey/shared/permissions';
+import { HAS_PERMISSION_KEY, hasPermission, PermissionType } from '@spikey/shared/permissions';
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { StatusCodes } from 'http-status-codes';
@@ -14,7 +14,7 @@ export class HasPermissionGuard implements CanActivate {
     const requiredPermission = this.reflector.get<string>(
       HAS_PERMISSION_KEY,
       context.getHandler()
-    );
+    ) as PermissionType;
 
 
     if (!requiredPermission) {
@@ -22,7 +22,7 @@ export class HasPermissionGuard implements CanActivate {
     }
 
     if (!user || !hasPermission(user.permissions, requiredPermission)) {
-      error(StatusCodes.FORBIDDEN, 'The user does not have sufficient privileges');
+      error(StatusCodes.FORBIDDEN, 'User does not have the right permissions.');
     }
 
     return true;

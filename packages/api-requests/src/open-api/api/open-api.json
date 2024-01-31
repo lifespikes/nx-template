@@ -202,14 +202,14 @@
     }
   },
   "info": {
-    "title": "Unnamed Restaurant",
+    "title": "Spikey",
     "description": "API description",
     "version": "1.0",
     "contact": {}
   },
   "tags": [
     {
-      "name": "sazon",
+      "name": "spikey",
       "description": ""
     }
   ],
