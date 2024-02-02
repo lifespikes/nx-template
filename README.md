@@ -66,9 +66,7 @@ We also strongly recommend using [WebStorm](https://www.jetbrains.com/webstorm/)
 At the moment, the possible way for commands to be run is as follows:
 
 - You must build the api with the command `nx build api`.
-- Run `node spikey <command-name>`.
-
-But if you want to run your command directly you can run,`yarn api:command <command-name>`
+- Run `node spikey <command-name> <project-name>`.
 
 To read more information, please read the [nestjs-commander documentation](https://docs.nestjs.com/recipes/nest-commander).
 

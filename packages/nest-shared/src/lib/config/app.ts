@@ -1,6 +1,4 @@
-import { registerAs } from '@nestjs/config';
 import { IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
-import { validateConfig } from '@spikey/nest-shared/utils/validate-config';
 import { registerConfig } from '@spikey/nest-shared/utils/register-config';
 
 type AppConfig = {
