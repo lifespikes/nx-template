@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import v from 'voca'
-import { UsesHints } from '@/types/global'
+import { UsesHints } from '@spikey/frontend/types/global'
 
 export const labelHints: UsesHints = {
   email: 'Correo electronico',

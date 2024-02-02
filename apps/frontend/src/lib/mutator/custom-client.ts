@@ -1,6 +1,6 @@
 import create from 'axios'
-import { NEXT_PUBLIC_API_URL } from '@/config'
-import { useAuthStore } from '@/global-stores/use-auth-store'
+import { NEXT_PUBLIC_API_URL } from '@spikey/frontend/config'
+import { useAuthStore } from '@spikey/frontend/global-stores/use-auth-store'
 
 export const AXIOS_INSTANCE = create.create({
   baseURL: `${NEXT_PUBLIC_API_URL}/api`,

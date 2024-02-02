@@ -43,7 +43,7 @@
     },
     "/api/users": {
       "post": {
-        "operationId": "UsersController_create",
+        "operationId": "UsersController_store",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -67,10 +67,15 @@
             }
           }
         },
-        "tags": ["users"]
+        "tags": ["users"],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
-        "operationId": "UsersController_findAll",
+        "operationId": "UsersController_index",
         "parameters": [],
         "responses": {
           "200": {
@@ -97,7 +102,7 @@
     },
     "/api/users/{id}": {
       "get": {
-        "operationId": "UsersController_findOne",
+        "operationId": "UsersController_show",
         "parameters": [
           {
             "name": "id",
@@ -169,7 +174,7 @@
         ]
       },
       "delete": {
-        "operationId": "UsersController_remove",
+        "operationId": "UsersController_destroy",
         "parameters": [
           {
             "name": "id",
@@ -238,11 +243,48 @@
       "AuthEntity": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "number"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "isVerified": {
+            "type": "boolean"
+          },
+          "role": {
+            "type": "object",
+            "example": "USER"
+          },
           "accessToken": {
             "type": "string"
           }
         },
-        "required": ["accessToken"]
+        "required": [
+          "id",
+          "createdAt",
+          "updatedAt",
+          "name",
+          "email",
+          "phone",
+          "isVerified",
+          "role",
+          "accessToken"
+        ]
       },
       "CreateUserDto": {
         "type": "object",
@@ -261,9 +303,12 @@
           },
           "isVerified": {
             "type": "boolean"
+          },
+          "role": {
+            "type": "object"
           }
         },
-        "required": ["name", "email", "password", "phone", "isVerified"]
+        "required": ["name", "email", "password", "phone", "isVerified", "role"]
       },
       "UserEntity": {
         "type": "object",
@@ -290,6 +335,10 @@
           },
           "isVerified": {
             "type": "boolean"
+          },
+          "role": {
+            "type": "object",
+            "example": "USER"
           }
         },
         "required": [
@@ -299,7 +348,8 @@
           "name",
           "email",
           "phone",
-          "isVerified"
+          "isVerified",
+          "role"
         ]
       },
       "UpdateUserDto": {
@@ -319,6 +369,9 @@
           },
           "isVerified": {
             "type": "boolean"
+          },
+          "role": {
+            "type": "object"
           }
         }
       }

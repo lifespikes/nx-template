@@ -1,4 +1,4 @@
-import { wrap } from '@/api/wrap'
+import { wrap } from '@spikey/frontend/api/wrap'
 import { UseInfiniteQueryOptions, UseQueryOptions } from '@tanstack/react-query'
 
 export type WrapperType = ReturnType<typeof wrap>

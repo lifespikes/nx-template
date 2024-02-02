@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
   SimpleAvatar,
 } from '@lifespikes/ui'
-import { useAuth } from '@/hooks/use-auth'
+import { useAuth } from '@spikey/frontend/hooks/use-auth'
 import { signOut } from 'next-auth/react'
 
 const DropdownUser = () => {

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import backgroundImage from '@/images/background-auth.jpg'
+import backgroundImage from '@spikey/frontend/images/background-auth.jpg'
 import { FC, PropsWithChildren } from 'react'
 
 export const AuthLayout: FC<PropsWithChildren> = ({ children }) => {

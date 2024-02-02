@@ -31,6 +31,12 @@
       "options": {
         "reportsDirectory": "../../coverage/packages/api-requests"
       }
+    },
+    "orval": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "orval"
+      }
     }
   }
 }

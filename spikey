@@ -3,14 +3,18 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-require('dotenv').config()
+require('dotenv').config();
 const cwd = process.cwd();
 
 function getCli() {
-  const cliPath = path.join(cwd, 'dist/apps/api/cli.js');
+
+  const project = process.argv[3] ?? 'api';
+
+  const cliPath = path.join(cwd, `dist/apps/${project}/cli.js`);
   if (fs.existsSync(cliPath)) {
     return require(cliPath);
   }
+  console.log(`project ${project} does not exists`);
   return null;
 }
 
@@ -21,9 +25,8 @@ if (cli) {
 }
 
 console.log('No dist folder found. Building...');
-execSync('npx nx build api', { cwd, stdio: 'inherit' });
+execSync('nx run-many -t build', { cwd, stdio: 'inherit' });
 console.log('Build complete.');
 console.log('Try running again.');
 console.log('Remember that every time you make a change in the api, you must run npx nx build api');
-
 

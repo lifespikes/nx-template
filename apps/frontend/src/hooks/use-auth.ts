@@ -1,4 +1,4 @@
-import { useAuthStore } from '@/global-stores/use-auth-store'
+import { useAuthStore } from '@spikey/frontend/global-stores/use-auth-store'
 
 export const useAuth = () => {
   const authStore = useAuthStore()

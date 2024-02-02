@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import DropdownUser from './dropdown-user'
-import { Logo } from '@/components/global/logo'
+import { Logo } from '@spikey/frontend/components/global/logo'
 import { Button } from '@lifespikes/ui'
 import { AlignJustify } from 'lucide-react'
-import { UseDiscloseReturn } from '@/hooks/use-disclose'
+import { UseDiscloseReturn } from '@spikey/frontend/hooks/use-disclose'
 
 const Header = (props: UseDiscloseReturn) => {
   return (

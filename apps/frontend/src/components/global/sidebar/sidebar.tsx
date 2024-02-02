@@ -1,10 +1,10 @@
 import React, { FC, useRef } from 'react'
 import { Sidebar, SidebarRefType } from '@lifespikes/ui'
 import { useSidebarItems } from './use-sidebar-items'
-import { Logo } from '@/components/global/logo'
-import { useUrlChange } from '@/hooks/use-url-change'
-import { UseDiscloseReturn } from '@/hooks/use-disclose'
-import DarkModeSwitcher from '@/components/global/sidebar/dark-mode-switcher'
+import { Logo } from '@spikey/frontend/components/global/logo'
+import { useUrlChange } from '@spikey/frontend/hooks/use-url-change'
+import { UseDiscloseReturn } from '@spikey/frontend/hooks/use-disclose'
+import DarkModeSwitcher from '@spikey/frontend/components/global/sidebar/dark-mode-switcher'
 
 const SidebarC: FC<UseDiscloseReturn> = (props) => {
   const sidebarRef = useRef<SidebarRefType | null>(null)

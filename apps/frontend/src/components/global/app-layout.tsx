@@ -1,9 +1,9 @@
 'use client'
 
 import { FC, PropsWithChildren, useEffect, useState } from 'react'
-import Sidebar from '@/components/global/sidebar/sidebar'
-import Header from '@/components/global/header/header'
-import { useDisclose } from '@/hooks/use-disclose'
+import Sidebar from '@spikey/frontend/components/global/sidebar/sidebar'
+import Header from '@spikey/frontend/components/global/header/header'
+import { useDisclose } from '@spikey/frontend/hooks/use-disclose'
 
 const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   const modal = useDisclose()

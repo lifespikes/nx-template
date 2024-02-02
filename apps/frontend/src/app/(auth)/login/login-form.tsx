@@ -1,34 +1,32 @@
-'use client';
+'use client'
 
-import { SubmitHandler } from 'react-hook-form';
-import { CheckCredentialsSchemaType } from '@/types/schemas';
-import { useForm } from '@/hooks/use-form';
-import { checkCredentialsSchema } from '@/constants/yup-schemas/users.schema';
-import { signIn } from 'next-auth/react';
-import { ChevronRight } from 'lucide-react';
-import { Button, Form, InputField } from '@lifespikes/ui';
+import { SubmitHandler } from 'react-hook-form'
+import { CheckCredentialsSchemaType } from '@spikey/frontend/types/schemas'
+import { useForm } from '@spikey/frontend/hooks/use-form'
+import { checkCredentialsSchema } from '@spikey/frontend/constants/yup-schemas/users.schema'
+import { signIn } from 'next-auth/react'
+import { ChevronRight } from 'lucide-react'
+import { Button, Form, InputField } from '@lifespikes/ui'
 
 const LoginForm = () => {
   const form = useForm<CheckCredentialsSchemaType>({
     schema: checkCredentialsSchema,
-    defaultValues: { password: '', email: '' }
-  });
+    defaultValues: { password: '', email: '' },
+  })
 
   const {
-    formState: { isSubmitting }
-  } = form;
-
+    formState: { isSubmitting },
+  } = form
 
   const handleSubmit: SubmitHandler<CheckCredentialsSchemaType> = async (
-    data
+    data,
   ) => {
     await signIn('credentials', {
       ...data,
       redirect: true,
-      callbackUrl: '/'
-    });
-
-  };
+      callbackUrl: '/',
+    })
+  }
 
   return (
     <Form {...form}>
@@ -60,7 +58,7 @@ const LoginForm = () => {
         </div>
       </form>
     </Form>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

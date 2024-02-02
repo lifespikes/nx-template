@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useNavigation } from '@/hooks/use-navigation'
+import { useNavigation } from '@spikey/frontend/hooks/use-navigation'
 
 export const useUrlChange = (onNavigationChange?: () => void) => {
   const { pathname } = useNavigation()

@@ -1,4 +1,4 @@
-import { UserType } from '@/types/models'
+import { UserType } from '@spikey/frontend/types/models'
 
 export const wrap = () => ({
   createUser: (): UserType => ({}) as UserType,

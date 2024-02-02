@@ -1,5 +1,5 @@
 import * as Yup from 'yup'
-import HttpStatusCode from '@/api/lib/http-status-codes'
+import HttpStatusCode from '@spikey/frontend/api/lib/http-status-codes'
 import { type NextRequest, NextResponse } from 'next/server'
 import { UserType } from './models'
 import { Session } from 'next-auth'
