@@ -8,8 +8,7 @@ import { ExtendedPrismaService } from '@spikey/nest-shared/prisma/extended-prism
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { HashService } from '@spikey/nest-shared/app/auth/hash.service';
 import { JwtStrategy } from '@spikey/nest-shared/app/auth/strategies/jwt.strategy';
-import { ConfigModule } from '@nestjs/config';
-import registerConfig from '@spikey/nest-shared/config';
+import { registerConfigModule } from '@spikey/nest-shared/utils/register-config-module';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -17,10 +16,7 @@ describe('AuthService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
-        ConfigModule.forRoot({
-          isGlobal: true,
-          load: [...registerConfig()]
-        }),
+        registerConfigModule(),
         PassportModule,
         JwtModule,
         EventEmitterModule.forRoot({
