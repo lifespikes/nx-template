@@ -9,7 +9,6 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { CustomPrismaModule } from 'nestjs-prisma';
 import { ExtendedPrismaService } from '@spikey/nest-shared/prisma/extended-prisma.service';
 import { UsersModule } from '@spikey/nest-shared/app/users/users.module';
-import { AuthService } from '@spikey/nest-shared/app/auth/auth.service';
 import { HashService } from '@spikey/nest-shared/app/auth/hash.service';
 import { JwtStrategy } from '@spikey/nest-shared/app/auth/strategies/jwt.strategy';
 
