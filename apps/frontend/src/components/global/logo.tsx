@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@spikey/frontend/lib/utils'
 
 export const Logo: FC<
   Omit<React.ComponentPropsWithoutRef<typeof Image>, 'src' | 'alt'>

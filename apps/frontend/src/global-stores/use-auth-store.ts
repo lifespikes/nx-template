@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { combine } from 'zustand/middleware'
-import { UserType } from '@/types/models'
+import { UserType } from '@spikey/frontend/types/models'
 
 export const useAuthStore = create(
   combine({ user: null as UserType | null }, (set) => ({

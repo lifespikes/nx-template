@@ -1,4 +1,4 @@
-import Yup from '@/constants/yup-schemas/yup'
+import Yup from '@spikey/frontend/constants/yup-schemas/yup'
 
 export const emailSchema = Yup.string()
   .email('Debe ser un correo valido')

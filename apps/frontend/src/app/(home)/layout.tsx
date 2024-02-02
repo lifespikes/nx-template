@@ -1,4 +1,4 @@
-import AppLayout from '@/components/global/app-layout'
+import AppLayout from '@spikey/frontend/components/global/app-layout'
 import { FC, PropsWithChildren } from 'react'
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {

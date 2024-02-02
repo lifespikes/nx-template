@@ -11,12 +11,12 @@ import {
 import React, { FC } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import BasicInformationForm from './basic-information-form'
-import { useForm } from '@/hooks/use-form'
+import { useForm } from '@spikey/frontend/hooks/use-form'
 import {
   userFormSchema,
   UserFormSchemaType,
   userFormsSchemaCreate,
-} from '@/constants/yup-schemas/prisma.schema'
+} from '@spikey/frontend/constants/yup-schemas/prisma.schema'
 
 export interface UsersFormProps {
   isCreateForm?: boolean

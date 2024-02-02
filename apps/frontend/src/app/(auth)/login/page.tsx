@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { Logo } from '@/components/global/logo'
+import { Logo } from '@spikey/frontend/components/global/logo'
 import { type Metadata } from 'next'
-import { AuthLayout } from '@/components/global/auth-layout'
-import LoginForm from '@/app/(auth)/login/login-form'
+import { AuthLayout } from '@spikey/frontend/components/global/auth-layout'
+import LoginForm from '@spikey/frontend/app/(auth)/login/login-form'
 
 export const metadata: Metadata = {
   title: 'Sign In',

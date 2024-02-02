@@ -1,9 +1,9 @@
 import React, { FC, PropsWithChildren, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 
-import { useAuth } from '@/hooks/use-auth'
-import { NextAuthSessionType } from '@/types/models'
-import { PUBLIC_ROUTES } from 'auth'
+import { useAuth } from '@spikey/frontend/hooks/use-auth'
+import { NextAuthSessionType } from '@spikey/frontend/types/models'
+import { PUBLIC_ROUTES } from '@spikey/frontend/auth'
 import { usePathname } from 'next/navigation'
 
 const AuthGuard: FC<PropsWithChildren> = ({ children }) => {

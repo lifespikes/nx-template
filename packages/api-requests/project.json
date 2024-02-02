@@ -25,11 +25,10 @@
         }
       }
     },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+    "orval": {
+      "executor": "nx:run-script",
       "options": {
-        "reportsDirectory": "../../coverage/packages/api-requests"
+        "script": "orval"
       }
     }
   }

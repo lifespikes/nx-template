@@ -1,4 +1,4 @@
-import yup from '@/constants/yup-schemas/yup'
+import yup from '@spikey/frontend/constants/yup-schemas/yup'
 
 import { InferType } from 'yup'
 

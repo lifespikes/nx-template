@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 //import '@lifespikes/ui/style.css'
-import { cn } from '@/lib/utils'
-import { auth } from 'auth'
-import AppProvider from '@/components/global/app-provider'
+import { cn } from '@spikey/frontend/lib/utils'
+import { auth } from '@spikey/frontend/auth'
+import AppProvider from '@spikey/frontend/components/global/app-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
